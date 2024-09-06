@@ -21,12 +21,11 @@ class MainActivity : AppCompatActivity() {
             val alturaStr: String = edtAltura.text.toString()
 
             if (pesoStr == "" || alturaStr == ""){
-            //Mostrar mensagem pro usuario
                 Snackbar.make(
                     edtPeso,
                     "Preencha todos os campos",
                     Snackbar.LENGTH_LONG
-                ).show() //o .show é pra mostrar o snack bar com a mensagem pro usuario
+                ).show()
             } else{
                 val peso = pesoStr.toFloat()
                 val altura = alturaStr.toFloat()
@@ -34,17 +33,11 @@ class MainActivity : AppCompatActivity() {
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
 
-                //Intent - Classe do proprio Android
-                // (Serve para declarar a intençao de fazer alguma coisa no sistema operacional do Android)
-
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
                 println("Bruna acao do botao" + resultado)
 
-                //cores
-                //EditText background + Icone
-                // Gradient + icone + titulo + descriçao
             }
 
 
